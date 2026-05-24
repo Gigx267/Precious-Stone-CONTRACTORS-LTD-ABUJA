@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Precious Stones Contractors | Advancing Architectural Excellence</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <meta name="description" content="Precious Stones Contractors Limited: Delivering premium residential developments and iconic infrastructure. Build your legacy with value and trust.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            darkCanvas: '#0A0C10',
+                            panelBg: '#11141A',
+                            goldText: '#E2C799',
+                            goldAccent: '#C5A880',
+                            goldMuted: '#967E5B',
+                            borderDark: 'rgba(255, 255, 255, 0.04)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0A0C10; }
+        ::-webkit-scrollbar-thumb { background: #E2C799; border-radius: 10px; }
+        
+        /* Subtle geometric line graphics overlay mimicking the abstract lines in the reference image */
+        .geo-bg {
+            background-image: 
+                linear-gradient(rgba(197, 168, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(197, 168, 128, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+        }
+
+        /* Ambient light source behind the main architectural visual */
+        .glow-radial {
+            background: radial-gradient(circle at 70% 30%, rgba(197, 168, 128, 0.12) 0%, transparent 60%);
+        }
+
+        .gold-gradient-btn {
+            background: linear-gradient(135deg, #A8895E 0%, #765D3B 100%);
+            transition: all 0.4s ease;
+        }
+        .gold-gradient-btn:hover {
+            background: linear-gradient(135deg, #C5A880 0%, #967E5B 100%);
+            box-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-brand-darkCanvas text-neutral-300 font-sans antialiased selection:bg-brand-goldAccent selection:text-black">
+
+    <div class="relative min-h-screen geo-bg glow-radial">
+
+        <header class="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex items-center justify-between relative z-20">
+            <a href="#" class="flex items-center gap-3 group" aria-label="Home">
+                <div class="relative w-8 h-8 flex items-center justify-center border border-brand-goldAccent/40 rounded-sm">
+                    <div class="absolute inset-1 border border-brand-goldAccent/20 rotate-45"></div>
+                    <i class="fa-solid fa-compass-drafting text-brand-goldText text-xs"></i>
+                </div>
+                <div class="flex flex-col tracking-[0.25em] uppercase">
+                    <span class="text-sm font-light text-white leading-none">Precious Stones</span>
+                    <span class="text-[8px] text-brand-goldMuted mt-1">Contractors</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-[10px] font-medium uppercase tracking-widest text-neutral-400">
+                <a href="#" class="hover:text-brand-goldText transition-colors">Home</a>
+                <a href="#" class="hover:text-brand-goldText transition-colors">About</a>
+                <a href="#" class="hover:text-brand-goldText transition-colors">Services</a>
+                <a href="#" class="hover:text-brand-goldText transition-colors">Projects</a>
+                <a href="#" class="hover:text-brand-goldText transition-colors">Contact</a>
+            </nav>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 relative z-10">
+
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-8 pb-20 items-center">
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl sm:text-6xl lg:text-[4.8rem] font-light font-serif text-white leading-[1.05] tracking-tight">
+                            Advancing <br>
+                            <span class="text-brand-goldText italic font-normal">Architectural</span> <br>
+                            Excellence
+                        </h1>
+                        <p class="text-xs md:text-sm font-light text-neutral-400 max-w-sm leading-relaxed tracking-wide pt-2">
+                            Innovative design & engineering solutions tailored for contemporary infrastructure and premium living spaces.
+                        </p>
+                    </div>
+                    
+                    <a href="#projects" class="inline-block px-8 py-3.5 gold-gradient-btn text-white text-[11px] font-semibold uppercase tracking-widest rounded-sm shadow-md">
+                        Discover More
+                    </a>
+                </div>
+
+                <div class="lg:col-span-6 relative rounded-sm overflow-hidden border border-white/5 shadow-2xl bg-brand-panelBg">
+                    <div class="aspect-[4/3] w-full">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Luxury Modernist Architecture Render" 
+                             class="w-full h-full object-cover brightness-[0.85]">
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 border-t border-brand-borderDark grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div class="space-y-4 px-4">
+                    <div class="h-12 flex items-center justify-center md:justify-start text-brand-goldAccent text-2xl">
+                        <i class="fa-solid fa-bezier-curve"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-md font-medium tracking-wider text-white uppercase">Cutting-Edge Engineering</h3>
+                        <p class="text-[11px] font-light text-neutral-400 leading-relaxed max-w-xs mx-auto md:mx-0">
+                            Delivering precision technical metrics, structurally sound blueprints, and execution frameworks built for modern infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 px-4 border-y md:border-y-0 md:border-x border-brand-borderDark py-8 md:py-0">
+                    <div class="h-12 flex items-center justify-center md:justify-start text-brand-goldAccent text-2xl">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-md font-medium tracking-wider text-white uppercase">Visionary Conceptual Designs</h3>
+                        <p class="text-[11px] font-light text-neutral-400 leading-relaxed max-w-xs mx-auto md:mx-0">
+                            Transforming complex spatial structural concepts into exquisite luxury environments matching high-end minimalist digital aesthetics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 px-4">
+                    <div class="h-12 flex items-center justify-center md:justify-start text-brand-goldAccent text-2xl">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-md font-medium tracking-wider text-white uppercase">Sustainable Technologies</h3>
+                        <p class="text-[11px] font-light text-neutral-400 leading-relaxed max-w-xs mx-auto md:mx-0">
+                            Integrating forward-looking green infrastructure layers, eco-conscious materials, and low-footprint systems gracefully.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="pt-16 border-t border-brand-borderDark space-y-10">
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] tracking-[0.3em] font-medium text-brand-goldAccent uppercase block">Featured Portfolios</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="group cursor-pointer space-y-4">
+                        <div class="aspect-square w-full bg-brand-panelBg rounded-sm overflow-hidden border border-brand-borderDark relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Corporate Tower Portfolio Visual" 
+                                 class="w-full h-full object-cover brightness-[0.75] group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-medium tracking-wider text-white uppercase">Corporate Tower</h4>
+                            <p class="text-[11px] font-light text-neutral-500 leading-relaxed max-w-xs">
+                                High-profile mixed-use office architecture optimized for commercial presence and ultimate longevity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group cursor-pointer space-y-4">
+                        <div class="aspect-square w-full bg-brand-panelBg rounded-sm overflow-hidden border border-brand-borderDark relative">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Futuristic Pavilion Portfolio Visual" 
+                                 class="w-full h-full object-cover brightness-[0.75] group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-medium tracking-wider text-white uppercase">Futuristic Pavilion</h4>
+                            <p class="text-[11px] font-light text-neutral-500 leading-relaxed max-w-xs">
+                                Avant-garde geometric shapes blending spatial fluidity with state-of-the-art materials engineering.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group cursor-pointer space-y-4">
+                        <div class="aspect-square w-full bg-brand-panelBg rounded-sm overflow-hidden border border-brand-borderDark relative">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Conceptual Render Portfolio Visual" 
+                                 class="w-full h-full object-cover brightness-[0.75] group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-medium tracking-wider text-white uppercase">Conceptual Render</h4>
+                            <p class="text-[11px] font-light text-neutral-500 leading-relaxed max-w-xs">
+                                Photo-realistic visualization modules providing accurate spatial intelligence data before development starts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="max-w-7xl mx-auto px-6 lg:px-12 py-8 border-t border-brand-borderDark flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] tracking-widest text-neutral-600 uppercase relative z-20">
+            <p>© 2026 Precious Stones Contractors Limited.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-brand-goldText transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-goldText transition-colors">LinkedIn</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

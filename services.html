@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Precious Stones Contractors - Property Development & Construction Abuja</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <meta name="description" content="Precious Stones Contractors offers comprehensive property development, building construction, project management, and quality assurance services in Abuja. Your vision, our expertise.">
+    
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        blueprint: {
+                            bg: '#F5F7FC',
+                            accent: '#1E4A7A',
+                            warm: '#E8A735',
+                            orange: '#F28C38',
+                            stroke: '#B2C9E8',
+                            dark: '#0F2A4A'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #F5F7FC; }
+        .hero-pattern {
+            background: linear-gradient(135deg, #0F2A4A 0%, #1E4A7A 100%);
+            position: relative;
+        }
+        .hero-pattern::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 50px -20px rgba(30, 74, 122, 0.3);
+        }
+        .icon-glow {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .icon-glow {
+            transform: scale(1.1);
+            filter: drop-shadow(0 8px 12px rgba(30, 74, 122, 0.2));
+        }
+        .stat-grid {
+            background: linear-gradient(115deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .process-step {
+            position: relative;
+        }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            right: -2rem;
+            width: 3rem;
+            height: 2px;
+            background: linear-gradient(90deg, #1E4A7A, #E8A735);
+            display: none;
+        }
+        @media (min-width: 1024px) {
+            .process-step:not(:last-child)::after {
+                display: block;
+            }
+        }
+        .ticker-marquee {
+            animation: marquee 22s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- Dynamic Canvas Background -->
+    <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none opacity-15 z-0"></canvas>
+
+    <!-- Top Ticker - Brand Message -->
+    <div class="relative z-30 bg-blueprint-accent/5 backdrop-blur-sm border-b border-blueprint-accent/10 py-2.5 overflow-hidden">
+        <div class="flex whitespace-nowrap ticker-marquee">
+            <div class="flex items-center gap-10 px-6 text-xs font-mono font-semibold tracking-wider text-blueprint-accent">
+                <span>✦ PROPERTY DEVELOPMENT • BUILDING CONSTRUCTION • PROJECT MANAGEMENT • QUALITY & INTEGRITY ✦</span>
+                <span>✦ WE BUILD MORE THAN STRUCTURES, WE BUILD VALUE & TRUST ✦</span>
+                <span>✦ YOUR VISION. OUR EXPERTISE. LASTING RESULTS. ✦</span>
+                <span>✦ PROPERTY DEVELOPMENT • BUILDING CONSTRUCTION • PROJECT MANAGEMENT • QUALITY & INTEGRITY ✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-blueprint-stroke/30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-blueprint-accent to-blueprint-dark rounded-xl flex items-center justify-center shadow-md">
+                    <img src="logo.png" alt="Precious Stones" class="w-7 h-7" onerror="this.src='https://placehold.co/40x40/1E4A7A/white?text=PS'">
+                </div>
+                <div>
+                    <h1 class="font-black text-2xl tracking-tighter text-blueprint-accent">PRECIOUS STONES</h1>
+                    <p class="text-[10px] font-mono text-blueprint-accent/70 -mt-0.5">CONTRACTORS LTD • ABUJA</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="text-gray-600 hover:text-blueprint-accent transition">Home</a>
+                <a href="projects.html" class="text-gray-600 hover:text-blueprint-accent transition">Projects</a>
+              
+                <a href="about.html" class="text-gray-600 hover:text-blueprint-accent transition">About</a>
+                <a href="contact.html" class="bg-blueprint-accent text-white px-7 py-3 rounded-xl hover:bg-blueprint-warm transition-all shadow-md font-semibold">
+                    Start Project <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </nav>
+            <button class="md:hidden text-2xl text-blueprint-accent">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="hero-pattern text-white py-24 lg:py-32 relative overflow-hidden">
+            <div class="absolute top-20 right-10 w-80 h-80 bg-blueprint-warm/10 rounded-full blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm font-mono mb-6 border border-white/20">
+                    <i class="fa-solid fa-cogs text-blueprint-warm"></i>
+                    <span>WHAT WE DELIVER</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tighter">
+                    Comprehensive <span class="text-blueprint-warm">Construction</span><br>
+                    & Development Services
+                </h1>
+                <p class="text-xl text-white/85 max-w-3xl mx-auto mt-6 leading-relaxed">
+                    From land acquisition to project handover — we provide end-to-end solutions with precision, integrity, and unmatched quality.
+                </p>
+                <div class="flex flex-wrap justify-center gap-5 mt-10">
+                    <a href="#core-services" class="bg-white text-blueprint-accent px-8 py-4 rounded-2xl font-bold hover:bg-blueprint-warm hover:text-white transition shadow-xl flex items-center gap-2">
+                        Explore Services <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="contact.html" class="border border-white/40 hover:bg-white/10 px-8 py-4 rounded-2xl font-semibold transition backdrop-blur-sm">
+                        Request Consultation
+                    </a>
+                </div>
+            </div>
+        </section><section id="core-services" class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+            <div class="text-center mb-16">
+                <span class="bg-blueprint-accent/10 text-blueprint-accent px-6 py-2 rounded-full text-xs font-mono font-bold tracking-wider"><i class="fa-regular fa-star mr-1"></i> OUR EXPERTISE</span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold mt-5 text-blueprint-accent">What We Do Best</h2>
+                <div class="w-20 h-1 bg-blueprint-warm mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-5">Integrated solutions covering every aspect of property development and construction.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Property Development -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg border border-blueprint-stroke/20 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="icon-glow w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center group-hover:bg-blueprint-accent transition-all duration-300">
+                            <i class="fa-solid fa-chart-line text-3xl text-blueprint-accent group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-mono text-blueprint-accent/40">01</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blueprint-accent mb-3">Property Development</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">From land acquisition and feasibility studies to project completion, we deliver exceptional real estate solutions that maximize value and minimize risk.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Land acquisition & due diligence</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Feasibility & market analysis</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Permitting & regulatory approvals</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Full-scale residential/commercial development</li>
+                    </ul>
+                </div>
+
+                <!-- Building Construction -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg border border-blueprint-stroke/20 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="icon-glow w-16 h-16 bg-blueprint-orange/10 rounded-2xl flex items-center justify-center group-hover:bg-blueprint-orange transition-all duration-300">
+                            <i class="fa-solid fa-hard-hat text-3xl text-blueprint-orange group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-mono text-blueprint-accent/40">02</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blueprint-accent mb-3">Building Construction</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">Quality construction for residential, commercial & industrial projects using premium materials, modern techniques, and rigorous quality control.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Luxury villas & gated communities</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Commercial office towers & retail spaces</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Industrial warehouses & factories</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Renovation & refurbishment</li>
+                    </ul>
+                </div>
+
+                <!-- Project Management -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg border border-blueprint-stroke/20 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="icon-glow w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center group-hover:bg-blueprint-accent transition-all duration-300">
+                            <i class="fa-solid fa-diagram-project text-3xl text-blueprint-accent group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-mono text-blueprint-accent/40">03</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blueprint-accent mb-3">Project Management</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">Efficient planning, coordination & supervision from start to finish — ensuring on-time, on-budget delivery with transparent communication.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Master scheduling & resource allocation</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Budget control & cost management</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Quality assurance & safety supervision</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Stakeholder coordination & reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Quality & Integrity -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg border border-blueprint-stroke/20 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="icon-glow w-16 h-16 bg-blueprint-warm/10 rounded-2xl flex items-center justify-center group-hover:bg-blueprint-warm transition-all duration-300">
+                            <i class="fa-solid fa-shield-heart text-3xl text-blueprint-warm group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-mono text-blueprint-accent/40">04</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blueprint-accent mb-3">Quality & Integrity</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">We are committed to durability, safety, timely delivery & client satisfaction. Our ethical approach ensures trust in every relationship.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> ISO-compliant quality standards</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Transparent contracts & pricing</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Post-construction warranty & support</li>
+                        <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-blueprint-warm text-xs"></i> Sustainable & eco-friendly practices</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+ <!-- Additional Capabilities Section -->
+        <section class="bg-blueprint-bg py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-14 items-center">
+                    <div>
+                        <span class="bg-blueprint-accent/10 text-blueprint-accent px-4 py-1.5 rounded-full text-xs font-mono font-bold">SPECIALIZED CAPABILITIES</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-blueprint-accent mt-4 leading-tight">Beyond Standard Construction</h2>
+                        <div class="h-1 w-16 bg-blueprint-warm my-5 rounded-full"></div>
+                        <p class="text-gray-600 leading-relaxed mb-6">We bring technical excellence and creative solutions to every project, whether it's a bespoke residence, a commercial landmark, or critical infrastructure.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blueprint-warm"></i> <span class="text-sm">Smart home integration</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blueprint-warm"></i> <span class="text-sm">Green building practices</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blueprint-warm"></i> <span class="text-sm">3D BIM modeling</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blueprint-warm"></i> <span class="text-sm">Value engineering</span></div>
+                        </div>
+                        <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-blueprint-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-blueprint-warm transition">Discuss Your Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl p-2 shadow-2xl">
+                            <img src="p2.png" alt="Modern construction site" class="rounded-xl w-full h-72 object-cover">
+                        </div>
+                        <div class="absolute -bottom-5 -left-5 bg-blueprint-warm text-white px-5 py-3 rounded-xl shadow-lg">
+                            <p class="text-xs font-mono">SINCE 2015</p>
+                            <p class="font-bold">Proven Expertise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Core Services Section - 4 Pillars from flyer -->
+        
+
+        <!-- Process / How We Work -->
+        <section class="bg-white border-y border-blueprint-stroke/20 py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <span class="bg-blueprint-accent/10 text-blueprint-accent px-5 py-2 rounded-full text-xs font-mono font-bold">OUR METHODOLOGY</span>
+                    <h2 class="text-4xl font-bold mt-4 text-blueprint-accent">From Vision to Reality</h2>
+                    <p class="text-gray-600 max-w-xl mx-auto mt-3">A seamless, transparent process built on collaboration and expertise.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-regular fa-lightbulb text-2xl text-blueprint-accent"></i>
+                        </div>
+                        <h3 class="font-bold text-blueprint-accent">01. Discovery</h3>
+                        <p class="text-sm text-gray-500 mt-2">Understanding your vision, goals, and requirements.</p>
+                    </div>
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-regular fa-pen-ruler text-2xl text-blueprint-accent"></i>
+                        </div>
+                        <h3 class="font-bold text-blueprint-accent">02. Planning</h3>
+                        <p class="text-sm text-gray-500 mt-2">Feasibility, design, budgeting, and approvals.</p>
+                    </div>
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-helmet-safety text-2xl text-blueprint-accent"></i>
+                        </div>
+                        <h3 class="font-bold text-blueprint-accent">03. Execution</h3>
+                        <p class="text-sm text-gray-500 mt-2">Quality construction with rigorous supervision.</p>
+                    </div>
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-regular fa-handshake text-2xl text-blueprint-accent"></i>
+                        </div>
+                        <h3 class="font-bold text-blueprint-accent">04. Delivery</h3>
+                        <p class="text-sm text-gray-500 mt-2">Handover, final inspection, and ongoing support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us - Stats & Trust Indicators -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+            <div class="stat-grid rounded-3xl p-10 shadow-xl border border-blueprint-stroke/20">
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div>
+                        <i class="fa-regular fa-building text-4xl text-blueprint-accent mb-3 inline-block"></i>
+                        <p class="text-4xl font-black text-blueprint-accent">15+</p>
+                        <p class="font-semibold text-gray-700">Projects Completed</p>
+                        <p class="text-xs text-gray-400 mt-1">Luxury & commercial</p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-face-smile text-4xl text-blueprint-orange mb-3 inline-block"></i>
+                        <p class="text-4xl font-black text-blueprint-accent">98%</p>
+                        <p class="font-semibold text-gray-700">Client Satisfaction</p>
+                        <p class="text-xs text-gray-400 mt-1">Repeat & referral rate</p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-clock text-4xl text-blueprint-accent mb-3 inline-block"></i>
+                        <p class="text-4xl font-black text-blueprint-accent">100%</p>
+                        <p class="font-semibold text-gray-700">On-Time Delivery</p>
+                        <p class="text-xs text-gray-400 mt-1">Proven track record</p>
+                    </div>
+                </div>
+                <div class="border-t border-blueprint-stroke/20 mt-8 pt-8 text-center">
+                    <p class="text-gray-600 italic">"We build more than structures — we build value and trust that lasts for generations."</p>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <!-- CTA Section - Strong Branding -->
+        <div class="max-w-6xl mx-6 lg:mx-auto my-20">
+            <div class="bg-gradient-to-r from-blueprint-accent to-blueprint-dark rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-60 h-60 bg-blueprint-warm/20 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-quote-right text-4xl text-blueprint-warm/40 mb-4"></i>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to Build Something Extraordinary?</h2>
+                    <p class="text-white/80 max-w-md mx-auto mb-8">Let's turn your vision into a lasting legacy with precision and integrity.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="contact.html" class="bg-blueprint-warm text-blueprint-accent px-8 py-4 rounded-xl font-bold hover:bg-white transition shadow-lg">Get Free Estimate</a>
+                        <a href="tel:+2347045524637" class="border border-white/40 hover:bg-white/10 px-8 py-4 rounded-xl font-semibold transition"><i class="fa-solid fa-phone-alt mr-2"></i> +234 704 552 4637</a>
+                    </div>
+                    <p class="text-xs font-mono mt-6 opacity-70">House 15, 14 Road, off 1st & 2nd Avenue, Gwarinpa, Abuja</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-blueprint-stroke/30 py-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-5">
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-copyright text-xs text-gray-400"></i>
+                    <p class="font-mono text-xs text-gray-500">2026 PRECIOUS STONES CONTRACTORS LTD • ABUJA, NIGERIA</p>
+                </div>
+                <div class="flex gap-8 text-xl text-gray-400">
+                    <i class="fa-brands fa-instagram hover:text-blueprint-accent cursor-pointer transition hover:scale-110"></i>
+                    <i class="fa-brands fa-linkedin-in hover:text-blueprint-accent cursor-pointer transition hover:scale-110"></i>
+                    <i class="fa-brands fa-facebook-f hover:text-blueprint-accent cursor-pointer transition hover:scale-110"></i>
+                </div>
+            </div>
+            <div class="mt-5 text-center text-[10px] font-mono text-gray-400">
+                <span>Instagram: precious_stones_contractors | Email: projects@preciousstonescontractors.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated geometric background
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let frame = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawBackground() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#1E4A7A';
+            ctx.lineWidth = 0.6;
+            ctx.globalAlpha = 0.1;
+            
+            const gridSize = 42;
+            const offsetX = (frame * 0.2) % gridSize;
+            const offsetY = (frame * 0.15) % gridSize;
+            
+            for (let x = offsetX; x < canvas.width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = offsetY; y < canvas.height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+            
+            ctx.globalAlpha = 0.05;
+            for (let i = -canvas.height; i < canvas.width + canvas.height; i += 70) {
+                ctx.beginPath();
+                ctx.moveTo(i + (frame * 0.03), 0);
+                ctx.lineTo(i + 35 + (frame * 0.03), canvas.height);
+                ctx.stroke();
+            }
+            frame += 0.6;
+            requestAnimationFrame(drawBackground);
+        }
+        drawBackground();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

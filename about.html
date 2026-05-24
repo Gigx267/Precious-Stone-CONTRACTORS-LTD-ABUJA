@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Precious Stones Contractors Ltd - Abuja's Trusted Builder</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <meta name="description" content="Learn about Precious Stones Contractors Ltd - a trusted property development and construction company delivering quality homes and commercial spaces with excellence and integrity in Abuja, Nigeria.">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        blueprint: {
+                            bg: '#F5F7FC',
+                            accent: '#1E4A7A',
+                            warm: '#E8A735',
+                            orange: '#F28C38',
+                            stroke: '#B2C9E8',
+                            dark: '#0F2A4A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --accent: #1E4A7A;
+        }
+
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, #CFDFF0 1px, transparent 1px),
+                linear-gradient(to bottom, #CFDFF0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .ticker {
+            animation: tickerScroll 25s linear infinite;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(30 74 122 / 0.15);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #1E4A7A 0%, #0F2A4A 100%);
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(30, 74, 122, 0.2);
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .team-img-placeholder {
+            background: linear-gradient(135deg, #1E4A7A 0%, #E8A735 100%);
+        }
+
+        .timeline-dot {
+            position: relative;
+        }
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #1E4A7A;
+            border: 2px solid #E8A735;
+        }
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-blueprint-bg font-sans antialiased overflow-x-hidden">
+
+    <!-- Background Canvas -->
+    <canvas id="geo-canvas" class="fixed inset-0 pointer-events-none opacity-20 z-0"></canvas>
+
+    <!-- Top Ticker -->
+    <div class="bg-white/80 backdrop-blur-md border-b border-blueprint-stroke/30 py-2.5 text-xs font-mono uppercase tracking-widest text-blueprint-accent overflow-hidden relative z-20">
+        <div class="ticker flex whitespace-nowrap">
+            <div class="flex items-center gap-8">
+                <span>✦ BUILDING DREAMS • CREATING VALUE • DELIVERING EXCELLENCE ✦</span>
+                <span>✦ WE BUILD MORE THAN STRUCTURES, WE BUILD VALUE & TRUST ✦</span>
+                <span>✦ QUALITY • INTEGRITY • TIMELY DELIVERY • CLIENT SATISFACTION ✦</span>
+                <span>✦ YOUR VISION. OUR EXPERTISE. LASTING RESULTS ✦</span>
+                <span>✦ BUILDING DREAMS • CREATING VALUE • DELIVERING EXCELLENCE ✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 bg-white/90 backdrop-blur-xl border-b border-blueprint-stroke/30 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-blueprint-accent rounded-2xl flex items-center justify-center shadow-inner">
+                    <img src="logo.png" alt="Precious Stones" class="w-7 h-7" onerror="this.src='https://placehold.co/40x40/1E4A7A/white?text=PS'">
+                </div>
+                <div>
+                    <h1 class="font-black text-2xl tracking-tighter text-blueprint-accent">PRECIOUS STONES</h1>
+                    <p class="text-[10px] font-mono text-blueprint-accent/60 -mt-1">CONTRACTORS LTD • ABUJA</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-blueprint-accent transition-colors">Home</a>
+                <a href="projects.html" class="hover:text-blueprint-accent transition-colors">Projects</a>
+                <a href="services.html" class="hover:text-blueprint-accent transition-colors">Services</a>
+               
+                <a href="contact.html" class="bg-blueprint-accent text-white px-6 py-3 rounded-2xl hover:bg-blueprint-warm transition-all font-semibold">
+                    Start Project
+                </a>
+            </nav>
+
+            <button class="md:hidden text-2xl text-blueprint-accent">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- HERO SECTION - About Us -->
+        <section class="hero-bg text-white pt-24 pb-28">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm font-mono mb-6">
+                    
+                   
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tighter max-w-4xl mx-auto">
+                    Building Dreams. <span class="text-blueprint-warm">Creating Value.</span> Delivering Excellence.
+                </h1>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto mt-6 leading-relaxed">
+                    Since our establishment, we've been transforming Abuja's landscape with integrity, quality craftsmanship, and unwavering commitment to client satisfaction.
+                </p>
+                <div class="mt-10 flex justify-center gap-4 flex-wrap">
+                    <a href="about.html" class="bg-white text-blueprint-accent px-8 py-4 rounded-2xl font-semibold hover:bg-blueprint-warm hover:text-white transition-all flex items-center gap-2">
+                        Discover Our Journey <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="contact.html" class="border border-white/40 hover:border-white px-8 py-4 rounded-2xl font-medium transition-all flex items-center gap-2">
+                        Talk to Our Team <i class="fa-solid fa-comment"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE ARE - Core Identity -->
+        <section id="story" class="max-w-7xl mx-auto px-6 py-24">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex bg-blueprint-accent/10 text-blueprint-accent px-4 py-2 rounded-full text-xs font-mono tracking-wider">
+                        <i class="fa-regular fa-building mr-2"></i> WHO WE ARE
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-blueprint-accent leading-tight">
+                        More Than Just <span class="text-blueprint-orange">Contractors</span> — We're Legacy Builders
+                    </h2>
+                    <div class="h-1 w-20 bg-blueprint-warm rounded-full"></div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Precious Stones Contractors Ltd is a trusted property development and construction company delivering quality homes and commercial spaces with excellence and integrity. We believe that every structure we build represents a promise — a promise of durability, safety, and lasting value.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        From land acquisition to project completion, we deliver exceptional real estate solutions. Our comprehensive approach ensures that every phase of development is handled with precision, transparency, and a relentless commitment to quality.
+                    </p>
+                    <div class="flex gap-6 pt-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-blueprint-accent text-2xl"></i>
+                            <span class="font-medium">100% Project Completion</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-trophy text-blueprint-warm text-2xl"></i>
+                            <span class="font-medium">Industry Recognized</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-3xl p-3 shadow-2xl rotate-2">
+                        <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                             alt="Luxury building construction" 
+                             class="rounded-2xl w-full h-80 object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border-l-4 border-blueprint-warm">
+                        <p class="text-xs font-mono text-gray-500">ESTABLISHED</p>
+                        <p class="text-2xl font-bold text-blueprint-accent">2015</p>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-blueprint-accent/10 backdrop-blur rounded-full p-4">
+                        <i class="fa-solid fa-hard-hat text-blueprint-accent text-3xl floating-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR VALUES - From Flyer: Quality & Integrity -->
+        <section class="bg-white py-24 border-y border-blueprint-stroke/20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="bg-blueprint-accent/10 text-blueprint-accent px-5 py-2 rounded-full text-xs font-mono tracking-widest">CORE VALUES</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-4 text-blueprint-accent">Quality & Integrity — Our Foundation</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">We are committed to durability, safety, timely delivery & client satisfaction. These principles guide every project we undertake.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="value-card bg-blueprint-bg rounded-2xl p-8 text-center border border-blueprint-stroke/20 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-gem text-blueprint-accent text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blueprint-accent mb-3">Integrity</h3>
+                        <p class="text-gray-600 text-sm">Transparent operations, honest communication, and ethical practices in every transaction.</p>
+                    </div>
+                    <div class="value-card bg-blueprint-bg rounded-2xl p-8 text-center border border-blueprint-stroke/20 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-blueprint-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-chart-line text-blueprint-orange text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blueprint-accent mb-3">Excellence</h3>
+                        <p class="text-gray-600 text-sm">Superior craftsmanship and attention to detail that exceeds industry standards.</p>
+                    </div>
+                    <div class="value-card bg-blueprint-bg rounded-2xl p-8 text-center border border-blueprint-stroke/20 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-clock text-blueprint-accent text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blueprint-accent mb-3">Timely Delivery</h3>
+                        <p class="text-gray-600 text-sm">Efficient project management ensuring deadlines are met without compromising quality.</p>
+                    </div>
+                    <div class="value-card bg-blueprint-bg rounded-2xl p-8 text-center border border-blueprint-stroke/20 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-blueprint-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-handshake text-blueprint-orange text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blueprint-accent mb-3">Client First</h3>
+                        <p class="text-gray-600 text-sm">Your satisfaction is our priority. We listen, adapt, and deliver beyond expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR EXPERTISE - The 4 Pillars from flyer -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="text-center mb-16">
+                <span class="bg-blueprint-accent/10 text-blueprint-accent px-5 py-2 rounded-full text-xs font-mono tracking-widest">WHAT WE DO</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-4 text-blueprint-accent">Our Core Capabilities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">From concept to completion, we offer comprehensive construction and development services</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl p-8 card-hover border border-blueprint-stroke/20 flex gap-5">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-chart-simple text-blueprint-accent text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blueprint-accent mb-2">Property Development</h3>
+                        <p class="text-gray-600">From land acquisition to project completion, we deliver exceptional real estate solutions. We handle site selection, feasibility studies, permitting, and full-scale development of residential and commercial properties.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 card-hover border border-blueprint-stroke/20 flex gap-5">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blueprint-orange/10 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-hard-hat text-blueprint-orange text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blueprint-accent mb-2">Building Construction</h3>
+                        <p class="text-gray-600">Quality construction for residential, commercial & industrial projects. Our team uses premium materials and advanced techniques to ensure structures that stand the test of time.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 card-hover border border-blueprint-stroke/20 flex gap-5">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blueprint-accent/10 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-diagram-project text-blueprint-accent text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blueprint-accent mb-2">Project Management</h3>
+                        <p class="text-gray-600">Efficient planning, coordination & supervision from start to finish. We ensure seamless execution, budget control, and risk management across all project phases.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 card-hover border border-blueprint-stroke/20 flex gap-5">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blueprint-orange/10 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-shield-heart text-blueprint-orange text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blueprint-accent mb-2">Quality Assurance</h3>
+                        <p class="text-gray-600">Committed to durability, safety standards, and rigorous quality control. Every project undergoes multiple inspections to guarantee long-lasting results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION - Building Trust -->
+        <div class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="bg-gradient-to-r from-blueprint-accent to-blueprint-dark rounded-3xl p-12 text-white">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-building-circle-check text-5xl text-blueprint-warm mb-4 inline-block"></i>
+                        <p class="text-5xl font-black">15+</p>
+                        <p class="text-sm opacity-80 mt-1 font-mono">COMPLETED PROJECTS</p>
+                        <p class="text-xs mt-2 opacity-70">Residential & Commercial</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-face-smile text-5xl text-blueprint-warm mb-4 inline-block"></i>
+                        <p class="text-5xl font-black">98%</p>
+                        <p class="text-sm opacity-80 mt-1 font-mono">CLIENT SATISFACTION</p>
+                        <p class="text-xs mt-2 opacity-70">Based on client feedback</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-handshake text-5xl text-blueprint-warm mb-4 inline-block"></i>
+                        <p class="text-5xl font-black">25+</p>
+                        <p class="text-sm opacity-80 mt-1 font-mono">STRATEGIC PARTNERS</p>
+                        <p class="text-xs mt-2 opacity-70">Industry collaborators</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12 pt-8 border-t border-white/20">
+                    <p class="text-lg font-semibold italic">"Your Vision. Our Expertise. Lasting Results."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUR COMMITMENT MESSAGE -->
+        <section class="max-w-7xl mx-auto px-6 py-16">
+            <div class="bg-white rounded-3xl p-12 shadow-xl text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-blueprint-accent/5 rounded-full blur-3xl"></div>
+                <i class="fa-solid fa-quote-left text-6xl text-blueprint-accent/20 mb-4"></i>
+                <h3 class="text-3xl font-bold text-blueprint-accent mb-4">We Build More Than Structures,<br>We Build Value & Trust.</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-6">Every brick we lay, every beam we raise, and every project we complete carries our promise of excellence. Precious Stones Contractors Ltd is dedicated to transforming spaces and enriching communities across Abuja and beyond.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-mono text-blueprint-accent">
+                    <span><i class="fa-regular fa-clock mr-2"></i> Timely Delivery</span>
+                    <span><i class="fa-regular fa-gem mr-2"></i> Uncompromised Quality</span>
+                    <span><i class="fa-regular fa-handshake mr-2"></i> Absolute Integrity</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFICE & CONTACT INFO from flyer -->
+        <div class="bg-blueprint-bg py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex bg-blueprint-accent/10 text-blueprint-accent px-4 py-2 rounded-full text-xs font-mono mb-4">
+                            <i class="fa-regular fa-address-card mr-2"></i> VISIT US
+                        </div>
+                        <h3 class="text-3xl font-bold text-blueprint-accent mb-5">Our Headquarters</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-location-dot text-blueprint-accent text-xl mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">House 15, 14 Road, off 1st & 2nd Avenue,</p>
+                                    <p>Gwarinpa, Abuja, Nigeria</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fa-solid fa-phone text-blueprint-accent text-xl"></i>
+                                <div>
+                                    <p class="font-semibold">+234 704 552 4637</p>
+                                    <p class="text-sm">Call us today for consultations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fa-brands fa-instagram text-blueprint-accent text-xl"></i>
+                                <div>
+                                    <p class="font-semibold">@precious_stones_contractors</p>
+                                    <p class="text-sm">Follow us for latest projects</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex gap-4">
+                            <a href="contact.html" class="bg-blueprint-accent text-white px-8 py-3 rounded-2xl font-semibold hover:bg-blueprint-warm transition">
+                                Get in Touch
+                            </a>
+                            <a href="#" class="border border-blueprint-accent text-blueprint-accent px-8 py-3 rounded-2xl font-semibold hover:bg-blueprint-accent/5 transition">
+                                <i class="fa-brands fa-instagram mr-2"></i> Follow Us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-2xl border border-blueprint-stroke/30">
+                            <div class="h-64 bg-blueprint-accent/10 flex items-center justify-center relative">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-map-location-dot text-6xl text-blueprint-accent/40 mb-2"></i>
+                                    <p class="text-sm font-mono text-blueprint-accent">Gwarinpa, Abuja • Nigeria</p>
+                                    <p class="text-xs text-gray-500 mt-2">Premium location serving FCT & surrounding regions</p>
+                                </div>
+                            </div>
+                            <div class="p-6 bg-white">
+                                <p class="text-sm font-mono text-gray-600"><i class="fa-regular fa-building mr-2"></i> Office Hours: Mon - Fri, 8:00 AM - 6:00 PM</p>
+                                <p class="text-sm font-mono text-gray-600 mt-2"><i class="fa-regular fa-envelope mr-2"></i> projects@preciousstonescontractors.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-blueprint-stroke/30 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="font-mono text-xs text-gray-500">
+                    © 2026 PRECIOUS STONES CONTRACTORS LTD • ABUJA, NIGERIA
+                </div>
+                <div class="flex gap-6 text-2xl text-gray-400">
+                    <i class="fa-brands fa-linkedin-in hover:text-blueprint-accent cursor-pointer transition"></i>
+                    <i class="fa-brands fa-instagram hover:text-blueprint-accent cursor-pointer transition"></i>
+                    <i class="fa-brands fa-facebook-f hover:text-blueprint-accent cursor-pointer transition"></i>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-6">Building Dreams. Creating Value. Delivering Excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Canvas Background Animation
+        const canvas = document.getElementById('geo-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        let time = 0;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = '#1E4A7A';
+            ctx.lineWidth = 0.8;
+            ctx.globalAlpha = 0.1;
+
+            const size = 45;
+            for (let x = (time * 0.3) % size; x < canvas.width; x += size) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = (time * 0.2) % size; y < canvas.height; y += size) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+
+            time += 0.8;
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Simple mobile menu placeholder (can be expanded)
+        const menuBtn = document.querySelector('.md\\:hidden');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                alert('Navigation menu - please use desktop or implement drawer menu');
+            });
+        }
+    </script>
+</body>
+</html>
